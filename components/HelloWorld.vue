@@ -33,7 +33,8 @@
 
     // console.log(BrowserInfo)
   
-
+    var str='1121'
+    console.log(str.split('1').length-1)
     },
     methods: {
 
