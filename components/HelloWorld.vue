@@ -28,13 +28,21 @@
       //   console.log('初始化成功')
       // }).catch(error => {
       // })
-      
-    // var  BrowserInfo= KDF.GetBrowserInfo()
 
-    // console.log(BrowserInfo)
-  
-    var str='1121'
-    console.log(str.split('1').length-1)
+      // var  BrowserInfo= KDF.GetBrowserInfo()
+
+      // console.log(BrowserInfo)
+
+      // var str='1234abc1234abc'
+      // console.log(str.split('1').length-1)
+
+
+
+      // let arr=[1,2,3,1,2,3,4,5,6,7,1,1,3]
+      // console.log([...new Set(arr)])
+      for (var i = 0; i < 5; i++) {
+        console.count('count');
+      }
     },
     methods: {
 
@@ -76,12 +84,14 @@
     height: 100%;
     background: rgba(0, 0, 0, 0.7);
     color: white;
+
     ul {
       float: right;
       // margin-top: 50px;
       width: 100px;
       height: 800px;
       background: #2A54B5;
+
       li {
         cursor: pointer;
       }

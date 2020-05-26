@@ -3,7 +3,7 @@
  */
 
 var ErrorCode = {
-    InitFailedNoSupportWebRTC: 1,
+    InitFailedNoSupportWebRTC: 1,//浏览器不支持WebRTC
 
 }
 
