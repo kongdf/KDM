@@ -6,6 +6,7 @@
     "build": "vite build"
   },
   "dependencies": {
+    "kongdf": "^1.0.0",
     "sass": "^1.26.5",
     "vue": "^3.0.0-beta.14"
   },

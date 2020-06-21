@@ -1,16 +1,28 @@
 <template>
   <div class="BG">
-    <ul>
-      <li @click="openCamera">打开摄像头</li>
+    <div class="imgbg">
+      <img class='jpgs'
+        src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1963304009,2816364381&fm=26&gp=0.jpg" alt="">
+      <img src="../sy.png" alt="" class="sy">
+    </div>
+    <!-- <ul> -->
+    <!-- <li @click="openCamera">打开摄`111111像头</li>
       <li @click="closeCamer">关闭摄像头</li>
       <li @click="openMic">打开麦克风</li>
     </ul>
     <video id="selfvideo" autoplay muted></video>
-    <audio ref='selfaudio' autoplay></audio>
+    <audio ref='selfaudio' autoplay></audio> -->
   </div>
 </template>
 
 <script>
+  document.onmousedown = function () {
+    if (event.button == 2) {
+      alert("当前页面不能使用右键！");
+      return false;
+    }
+  }
+  // import KDF from "kongdf";
   import KDF from "../KDF";
   export default {
     name: 'HelloWorld',
@@ -23,13 +35,15 @@
       }
     },
     created() {
+
+
       window.KDF = KDF
       // KDF.CheckDeviceSupport().then(() => {
       //   console.log('初始化成功')
       // }).catch(error => {
       // })
 
-      // var  BrowserInfo= KDF.GetBrowserInfo()
+      var BrowserInfo = KDF.GetBrowserInfo()
 
       // console.log(BrowserInfo)
 
@@ -41,7 +55,7 @@
       // let arr=[1,2,3,1,2,3,4,5,6,7,1,1,3]
       // console.log([...new Set(arr)])
       for (var i = 0; i < 5; i++) {
-        console.count('count');
+        // console.count('count');
       }
     },
     methods: {
@@ -84,6 +98,26 @@
     height: 100%;
     background: rgba(0, 0, 0, 0.7);
     color: white;
+
+    .imgbg {
+      width: 500px;
+      height: 500px;
+      position: relative;
+
+      .jpgs {
+        width: 500px;
+        height: 500px;
+      }
+
+      .sy {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+      }
+
+    }
 
     ul {
       float: right;
