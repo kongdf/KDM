@@ -1,18 +1,11 @@
 {
-  "name": "vitetest",
-  "version": "0.0.0",
+  "name": "kongdf",
+  "version": "1.0.1",
+  "description": "一些常用方法的封装库",
+  "main": "src/KDF.js",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {
-    "kongdf": "^1.0.0",
-    "sass": "^1.26.5",
-    "vue": "^3.0.0-beta.14"
-  },
-  "devDependencies": {
-    "@vue/compiler-sfc": "^3.0.0-beta.14",
-    "showdown": "^1.9.1",
-    "vite": "^0.16.6"
-  }
+  "author": "",
+  "license": "ISC"
 }

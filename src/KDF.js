@@ -3,7 +3,7 @@
  */
 
 var ErrorCode = {
-    InitFailedNoSupportWebRTC: 1, //浏览器不支持WebRTC
+    InitFailedNoSupportWebRTC: 1,//浏览器不支持WebRTC
 
 }
 
@@ -87,6 +87,22 @@ class KDF {
                 });
         })
     }
+    UnPublishVideo() {
+        return new Promise((resolve, reject) => {
+            console.log(navigator.mediaDevices.getUserMedia)
+            navigator.mediaDevices.getUserMedia({
+                    audio: true,
+                    video: false
+                })
+                .then(openLocalStream => {
+                    debugger
+                    resolve(openLocalStream)
+                })
+                .catch(function (error) {
+                    reject(error)
+                });
+        })
+    }
 
 
 
@@ -148,7 +164,6 @@ class KDF {
     GetBrowserInfo() {
         let BrowserInfo = {}
         var ua = navigator.userAgent //获取浏览器的userAgent,并转化为小写——注：userAgent是用户可以修改的 
-        console.log(navigator)
         BrowserInfo.isMobile = /iPhone|iPad|iPod|iOS|Android/i.test(ua);
         BrowserInfo.userAgent = ua;
         if (!!window.ActiveXObject || "ActiveXObject" in window) {
@@ -170,20 +185,7 @@ class KDF {
         BrowserInfo.isAndroid = ua.indexOf('Android') > -1 || ua.indexOf('Linux') > -1; //g
         BrowserInfo.isIOS = !!ua.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
         BrowserInfo.isMac = /macintosh|mac os x/i.test(ua);
-        BrowserInfo.isWin = /windows|win32/i.test(ua)
-
-
-
-
-        if (navigator.language.includes('zh')) {
-            BrowserInfo.language = 'zh'
-        } else if (navigator.language.includes('en')) {
-            BrowserInfo.language = 'en'
-        } else if (navigator.language.includes('ja')) {
-            BrowserInfo.language = 'ja'
-        }
-
-
+        BrowserInfo.isWin=/windows|win32/i.test(ua)
 
         return BrowserInfo
 
