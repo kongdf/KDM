@@ -3,6 +3,7 @@
   "version": "1.0.1",
   "description": "一些常用方法的封装库",
   "main": "src/KDF.js",
+  "git repository":"https://github.com/kongdf/KDM",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
