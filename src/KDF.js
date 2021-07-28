@@ -3,21 +3,13 @@
  */
 
 var ErrorCode = {
-    InitFailedNoSupportWebRTC: 1,//浏览器不支持WebRTC
+    InitFailedNoSupportWebRTC: 1, //浏览器不支持WebRTC
 
 }
 
 class KDF {
-    /**
-     * 参数说明
-     * @param {string} userId － 用户的userid
-     * @param {string} appId － 企业id
-     * @param {Array} participants 人员列表
-     */
-    constructor() {
-        userId: null
-        appId: null
-        participants: []
+ 
+    constructor() { 
         videoStream: null
         audioStream: null
 
@@ -185,21 +177,26 @@ class KDF {
         BrowserInfo.isAndroid = ua.indexOf('Android') > -1 || ua.indexOf('Linux') > -1; //g
         BrowserInfo.isIOS = !!ua.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
         BrowserInfo.isMac = /macintosh|mac os x/i.test(ua);
-        BrowserInfo.isWin=/windows|win32/i.test(ua)
+        BrowserInfo.isWin = /windows|win32/i.test(ua)
 
         return BrowserInfo
 
     }
 
-    GetQueryString(name) {
-        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
-        var r = window.location.search.substr(1).match(reg);
-        if (r != null) return unescape(r[2]);
-        return null;
-    }
-    // var ua = navigator.userAgent.toLowerCase(); //获取浏览器的userAgent,并转化为小写——注：userAgent是用户可以修改的
-
-
+    GetQueryString(urlStr) {
+        // 获取url中"?"符后的字串
+        let url = urlStr || location.href;
+        let params = {};
+        if (url.indexOf('?') != -1) {
+          let str = url.substr(url.indexOf('?') + 1);
+          let strs = str.split('&');
+          for (let i = 0; i < strs.length; i++) {
+            params[strs[i].split('=')[0]] = decodeURI(strs[i].split('=')[1]);
+          }
+        }
+        return params;
+      };
+ 
 
 
 
