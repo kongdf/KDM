@@ -11,8 +11,7 @@ class KDF {
  
     constructor() { 
         videoStream: null
-        audioStream: null
-
+        audioStream: null 
     }
     /**
      * 检查浏览器是否支持WebRTC 
